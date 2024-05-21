@@ -9,7 +9,7 @@ run-p1:
 	java Numarare
 
 
-Trenuri.class: Trenuri/src/Trenuri.java
+Trenuri.class: Trenuri/src/Trenuri.java Trenuri/src/MyScanner.java
 	javac -d . $^
 
 run-p2:
@@ -23,7 +23,7 @@ run-p3:
 	java Drumuri
 
 
-Scandal.class: Scandal/src/Scandal.java Scandal/src/StructWordProperties.java
+Scandal.class: Scandal/src/Scandal.java
 	javac -d . $^
 
 run-p4:

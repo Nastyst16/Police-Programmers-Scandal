@@ -6,16 +6,6 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.PriorityQueue;
 
-class DijkstraResult {
-	List<Integer> d;
-	List<Integer> p;
-
-	DijkstraResult(List<Integer> _d, List<Integer> _p) {
-		d = _d;
-		p = _p;
-	}
-};
-
 class Pair implements Comparable<Pair> {
 	int node;
 	long cost;
