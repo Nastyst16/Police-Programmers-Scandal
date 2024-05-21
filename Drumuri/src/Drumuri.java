@@ -100,6 +100,7 @@ public class Drumuri {
 	}
 
 
+	// function inspired from Radu Nichita laboratory08 solution helper
 	public static long[] dijkstra(int start, ArrayList<Pair>[] adj, int n) {
 		PriorityQueue<Pair> pq = new PriorityQueue<>();
 		long[] dist = new long[n + 1];
@@ -109,18 +110,19 @@ public class Drumuri {
 
 		while (!pq.isEmpty()) {
 			Pair current = pq.poll();
-			int u = current.node;
-			long costU = current.cost;
+			int node = current.node;
+			long costNode = current.cost;
 
-			if (costU > dist[u]) continue;
+			if (costNode > dist[node])
+				continue;
 
-			for (Pair neighbor : adj[u]) {
-				int v = neighbor.node;
+			for (Pair neighbor : adj[node]) {
+				int neigh = neighbor.node;
 				long costV = neighbor.cost;
 
-				if (dist[u] + costV < dist[v]) {
-					dist[v] = dist[u] + costV;
-					pq.add(new Pair(v, dist[v]));
+				if (dist[node] + costV < dist[neigh]) {
+					dist[neigh] = dist[node] + costV;
+					pq.add(new Pair(neigh, dist[neigh]));
 				}
 			}
 		}

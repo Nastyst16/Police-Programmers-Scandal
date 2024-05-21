@@ -3,7 +3,7 @@ Starting audit...
 [WARN] /mnt/c/Users/crist/Desktop/An2_Sem2/PA/tema2/Police-Programmers-Scandal/./Drumuri/src/Drumuri.java:44: Comment has incorrect indentation level 0, expected is 1, indentation should be the same level as line 45. [CommentsIndentation]
 [WARN] /mnt/c/Users/crist/Desktop/An2_Sem2/PA/tema2/Police-Programmers-Scandal/./Drumuri/src/Drumuri.java:47: Comment has incorrect indentation level 0, expected is 2, indentation should be the same level as line 48. [CommentsIndentation]
 [WARN] /mnt/c/Users/crist/Desktop/An2_Sem2/PA/tema2/Police-Programmers-Scandal/./Drumuri/src/Drumuri.java:47: Line is longer than 100 characters (found 129). [LineLength]
-[WARN] /mnt/c/Users/crist/Desktop/An2_Sem2/PA/tema2/Police-Programmers-Scandal/./Drumuri/src/Drumuri.java:115: 'if' construct must use '{}'s. [NeedBraces]
+[WARN] /mnt/c/Users/crist/Desktop/An2_Sem2/PA/tema2/Police-Programmers-Scandal/./Drumuri/src/Drumuri.java:116: 'if' construct must use '{}'s. [NeedBraces]
 [WARN] /mnt/c/Users/crist/Desktop/An2_Sem2/PA/tema2/Police-Programmers-Scandal/./Numarare/src/Numarare.java:2: Wrong lexicographical order for 'java.io.FileReader' import. Should be before 'java.io.IOException'. [CustomImportOrder]
 [WARN] /mnt/c/Users/crist/Desktop/An2_Sem2/PA/tema2/Police-Programmers-Scandal/./Numarare/src/Numarare.java:13: Comment has incorrect indentation level 0, expected is 2, indentation should be the same level as line 14. [CommentsIndentation]
 [WARN] /mnt/c/Users/crist/Desktop/An2_Sem2/PA/tema2/Police-Programmers-Scandal/./Numarare/src/Numarare.java:13: Line is longer than 100 characters (found 131). [LineLength]
