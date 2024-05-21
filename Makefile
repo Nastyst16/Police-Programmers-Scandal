@@ -16,7 +16,7 @@ run-p2:
 	java Trenuri
 
 
-Drumuri.class: Drumuri/src/Drumuri.java
+Drumuri.class: Drumuri/src/Drumuri.java Drumuri/src/MyScanner.java
 	javac -d . $^
 
 run-p3:
