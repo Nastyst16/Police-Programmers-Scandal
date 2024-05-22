@@ -57,7 +57,7 @@ public class Trenuri {
 			cityIndex.put(city, index++);
 		}
 
-		// xreate distance array
+		// create distance array
 		int[] dp = new int[toateOrasele.size()];
 		Arrays.fill(dp, -1);
 

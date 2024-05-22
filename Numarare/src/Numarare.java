@@ -24,6 +24,7 @@ public class Numarare {
 			graph2[i] = new ArrayList<>();
 		}
 
+		// reading the first graph
 		for (int i = 0; i < M; i++) {
 			int u = sc.nextInt();
 			int v = sc.nextInt();
@@ -31,6 +32,7 @@ public class Numarare {
 			graph1[u].add(v);
 		}
 
+		// reading the second graph
 		for (int i = 0; i < M; i++) {
 			int u = sc.nextInt();
 			int v = sc.nextInt();
@@ -38,26 +40,14 @@ public class Numarare {
 			graph2[u].add(v);
 		}
 
-		// writing to file
-		String fileNameOut = "numarare.out";
-
-		try {
-			PrintWriter fout = new PrintWriter(fileNameOut);
-			fout.println(solve(1));
-			fout.close();
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-
-	}
-
-	static int solve(int u) {
+		// dp[i] = number of ways to reach node i
 		int[] dp = new int[N + 1];
-		dp[u] = 1;
+		dp[1] = 1;
 
-		for (int x = u; x <= N; x++) {
+		for (int x = 1; x <= N; x++) {
 			for (int i : graph1[x]) {
 				for (int j : graph2[x]) {
+					// for optimization
 					if (i < j) {
 						break;
 					}
@@ -70,10 +60,19 @@ public class Numarare {
 			}
 		}
 
-		return dp[N];
+
+		// writing to file
+		String fileNameOut = "numarare.out";
+
+		try {
+			PrintWriter fout = new PrintWriter(fileNameOut);
+			fout.println(dp[N]);
+			fout.close();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
 	}
-
-
 
 }
 

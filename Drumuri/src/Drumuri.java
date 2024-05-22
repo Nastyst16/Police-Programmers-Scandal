@@ -24,10 +24,10 @@ class Pair implements Comparable<Pair> {
 
 public class Drumuri {
 
-	// numarul maxim de noduri
+	// maximum number of nodes
 	public static final int NMAX = 100005;
 
-	// valoare mai mare decat orice distanta din graf
+	// the maximum value for a distance
 	public static final long INF = Long.MAX_VALUE;
 
 	public static void main(String[] args) throws FileNotFoundException {
@@ -36,12 +36,9 @@ public class Drumuri {
 
 		MyScanner sc = new MyScanner(new FileReader(fileName));
 
-		// n = numar de noduri, m = numar de muchii
 		int n, m;
-		// nodul sursa
-		int source;
 
-		// lista de adiacenta
+		// adjacency list
 		ArrayList<Pair>[] adj = new ArrayList[NMAX];
 
 		n = sc.nextInt();
@@ -65,6 +62,7 @@ public class Drumuri {
 		z = sc.nextInt();
 		sc.close();
 
+		// calculate the distance from x and y to all other nodes
 		long[] distFromX = dijkstra(x, adj, n);
 		long[] distFromY = dijkstra(y, adj, n);
 
@@ -75,7 +73,6 @@ public class Drumuri {
 		String fileNameOut = "drumuri.out";
 		try {
 			PrintWriter fout = new PrintWriter(fileNameOut);
-
 			fout.println(a + b);
 
 			fout.close();
