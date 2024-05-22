@@ -41,10 +41,8 @@ public class Drumuri {
 		// nodul sursa
 		int source;
 
-		// adj[node] = lista de adiacenta a nodului node
-		// perechea (neigh, w) semnifica arc de la node la neigh de cost w
+		// lista de adiacenta
 		ArrayList<Pair>[] adj = new ArrayList[NMAX];
-
 
 		n = sc.nextInt();
 		m = sc.nextInt();
@@ -100,8 +98,9 @@ public class Drumuri {
 			int node = current.node;
 			long costNode = current.cost;
 
-			if (costNode > dist[node])
+			if (costNode > dist[node]) {
 				continue;
+			}
 
 			for (Pair neighbor : adj[node]) {
 				int neigh = neighbor.node;

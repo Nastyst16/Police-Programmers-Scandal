@@ -1,16 +1,2 @@
 Starting audit...
-[WARN] /mnt/c/Users/crist/Desktop/An2_Sem2/PA/tema2/Police-Programmers-Scandal/./Drumuri/src/Drumuri.java:31: Comment has incorrect indentation level 0, expected is 1, indentation should be the same level as line 32. [CommentsIndentation]
-[WARN] /mnt/c/Users/crist/Desktop/An2_Sem2/PA/tema2/Police-Programmers-Scandal/./Drumuri/src/Drumuri.java:34: Comment has incorrect indentation level 0, expected is 1, indentation should be the same level as line 35. [CommentsIndentation]
-[WARN] /mnt/c/Users/crist/Desktop/An2_Sem2/PA/tema2/Police-Programmers-Scandal/./Drumuri/src/Drumuri.java:37: Comment has incorrect indentation level 0, expected is 2, indentation should be the same level as line 38. [CommentsIndentation]
-[WARN] /mnt/c/Users/crist/Desktop/An2_Sem2/PA/tema2/Police-Programmers-Scandal/./Drumuri/src/Drumuri.java:37: Line is longer than 100 characters (found 129). [LineLength]
-[WARN] /mnt/c/Users/crist/Desktop/An2_Sem2/PA/tema2/Police-Programmers-Scandal/./Drumuri/src/Drumuri.java:106: 'if' construct must use '{}'s. [NeedBraces]
-[WARN] /mnt/c/Users/crist/Desktop/An2_Sem2/PA/tema2/Police-Programmers-Scandal/./Numarare/src/Numarare.java:2: Wrong lexicographical order for 'java.io.FileReader' import. Should be before 'java.io.IOException'. [CustomImportOrder]
-[WARN] /mnt/c/Users/crist/Desktop/An2_Sem2/PA/tema2/Police-Programmers-Scandal/./Numarare/src/Numarare.java:13: Comment has incorrect indentation level 0, expected is 2, indentation should be the same level as line 14. [CommentsIndentation]
-[WARN] /mnt/c/Users/crist/Desktop/An2_Sem2/PA/tema2/Police-Programmers-Scandal/./Numarare/src/Numarare.java:13: Line is longer than 100 characters (found 131). [LineLength]
-[WARN] /mnt/c/Users/crist/Desktop/An2_Sem2/PA/tema2/Police-Programmers-Scandal/./Trenuri/src/Trenuri.java:1: Using the '.*' form of import should be avoided - java.io.*. [AvoidStarImport]
-[WARN] /mnt/c/Users/crist/Desktop/An2_Sem2/PA/tema2/Police-Programmers-Scandal/./Trenuri/src/Trenuri.java:2: Using the '.*' form of import should be avoided - java.util.*. [AvoidStarImport]
-[WARN] /mnt/c/Users/crist/Desktop/An2_Sem2/PA/tema2/Police-Programmers-Scandal/./Trenuri/src/Trenuri.java:10: Comment has incorrect indentation level 0, expected is 2, indentation should be the same level as line 11. [CommentsIndentation]
-[WARN] /mnt/c/Users/crist/Desktop/An2_Sem2/PA/tema2/Police-Programmers-Scandal/./Trenuri/src/Trenuri.java:10: Line is longer than 100 characters (found 129). [LineLength]
-[WARN] /mnt/c/Users/crist/Desktop/An2_Sem2/PA/tema2/Police-Programmers-Scandal/./Trenuri/src/Trenuri.java:15: Distance between variable 'startCity' declaration and its first usage is 5, but allowed 3.  Consider to make that variable as final if you still need to store its value in advance (before method calls that might do side effect on original value). [VariableDeclarationUsageDistance]
-[WARN] /mnt/c/Users/crist/Desktop/An2_Sem2/PA/tema2/Police-Programmers-Scandal/./Trenuri/src/Trenuri.java:16: Distance between variable 'endCity' declaration and its first usage is 7, but allowed 3.  Consider to make that variable as final if you still need to store its value in advance (before method calls that might do side effect on original value). [VariableDeclarationUsageDistance]
 Audit done.

@@ -1,5 +1,5 @@
-import java.io.IOException;
 import java.io.FileReader;
+import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
 
@@ -10,7 +10,6 @@ public class Numarare {
 
 	public static void main(String[] args) throws IOException {
 
-//		String fileName = "C:\\Users\\crist\\Desktop\\An2_Sem2\\PA\\tema2\\Police-Programmers-Scandal\\Numarare\\src\\numarare.in";
 		String fileName = "numarare.in";
 
 		MyScanner sc = new MyScanner(new FileReader(fileName));

@@ -1,5 +1,16 @@
-import java.io.*;
-import java.util.*;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Map;
+import java.util.Queue;
+import java.util.Set;
 
 public class Trenuri {
 
@@ -7,18 +18,19 @@ public class Trenuri {
 
 	public static void main(String[] args) throws IOException {
 
-//		String fileName = "C:\\Users\\crist\\Desktop\\An2_Sem2\\PA\\tema2\\Police-Programmers-Scandal\\Trenuri\\src\\trenuri.in";
 		String fileName = "trenuri.in";
 
 		MyScanner sc = new MyScanner(new FileReader(fileName));
 
-		String startCity = sc.next();
-		String endCity = sc.next();
+		final String startCity = sc.next();
+		final String endCity = sc.next();
 
 		int M = sc.nextInt();
 
 		Map<String, List<String>> graph = new HashMap<>();
 		Map<String, Integer> gradIntrare = new HashMap<>();
+
+		// using set because we don't want duplicates
 		Set<String> toateOrasele = new HashSet<>();
 
 		for (int i = 0; i < M; i++) {
