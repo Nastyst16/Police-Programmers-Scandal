@@ -28,13 +28,10 @@ public class Drumuri {
 	public static final int NMAX = 100005;
 
 	// valoare mai mare decat orice distanta din graf
-//	public static final double INF = Double.MAX_VALUE;
 	public static final long INF = Long.MAX_VALUE;
 
-//////////////////////////////////////////////////////////////////////
 	public static void main(String[] args) throws FileNotFoundException {
 
-//		String fileName = "C:\\Users\\crist\\Desktop\\An2_Sem2\\PA\\tema2\\Police-Programmers-Scandal\\Drumuri\\src\\drumuri.in";
 		String fileName = "drumuri.in";
 
 		MyScanner sc = new MyScanner(new FileReader(fileName));
@@ -46,7 +43,7 @@ public class Drumuri {
 
 		// adj[node] = lista de adiacenta a nodului node
 		// perechea (neigh, w) semnifica arc de la node la neigh de cost w
-		ArrayList<Pair>[] adj = new ArrayList[NMAX]; // schimba aici nu "noduri" posibil
+		ArrayList<Pair>[] adj = new ArrayList[NMAX];
 
 
 		n = sc.nextInt();
@@ -119,4 +116,5 @@ public class Drumuri {
 
 		return dist;
 	}
+
 }

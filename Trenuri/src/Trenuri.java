@@ -6,81 +6,93 @@ public class Trenuri {
 	static List<String> topoOrder = new ArrayList<>();
 
 	public static void main(String[] args) throws IOException {
-//		BufferedReader br = new BufferedReader(new FileReader("trenuri.in"));
 
-		String fileName = "C:\\Users\\crist\\Desktop\\An2_Sem2\\PA\\tema2\\Police-Programmers-Scandal\\Trenuri\\src\\trenuri.in";
-//		String fileName = "trenuri.in";
+//		String fileName = "C:\\Users\\crist\\Desktop\\An2_Sem2\\PA\\tema2\\Police-Programmers-Scandal\\Trenuri\\src\\trenuri.in";
+		String fileName = "trenuri.in";
 
-		MyScanner br = new MyScanner(new FileReader(fileName));
+		MyScanner sc = new MyScanner(new FileReader(fileName));
 
-		PrintWriter pw = new PrintWriter(new FileWriter("trenuri.out"));
+		String startCity = sc.next();
+		String endCity = sc.next();
 
-		String startCity = br.next();
-		String endCity = br.next();
-
-		int M = br.nextInt();
+		int M = sc.nextInt();
 
 		Map<String, List<String>> graph = new HashMap<>();
-		Map<String, Integer> inDegree = new HashMap<>();
-		Set<String> allCities = new HashSet<>();
+		Map<String, Integer> gradIntrare = new HashMap<>();
+		Set<String> toateOrasele = new HashSet<>();
 
 		for (int i = 0; i < M; i++) {
-			String from = br.next();
-			String to = br.next();
+			String from = sc.next();
+			String to = sc.next();
 
 			graph.putIfAbsent(from, new ArrayList<>());
 			graph.get(from).add(to);
 
-			inDegree.put(to, inDegree.getOrDefault(to, 0) + 1);
-			inDegree.putIfAbsent(from, 0);
+			gradIntrare.put(to, gradIntrare.getOrDefault(to, 0) + 1);
+			gradIntrare.putIfAbsent(from, 0);
 
-			allCities.add(from);
-			allCities.add(to);
+			toateOrasele.add(from);
+			toateOrasele.add(to);
 		}
 
-		topologicalSort(graph, inDegree, allCities);
+		// topological sort
+		topologicalSort(graph, gradIntrare, toateOrasele);
 
-
-		// Longest Path in DAG
-		Map<String, Integer> distances = new HashMap<>();
-		for (String city : allCities) {
-			distances.put(city, 0);
+		// map city names to indices
+		Map<String, Integer> cityIndex = new HashMap<>();
+		int index = 0;
+		for (String city : toateOrasele) {
+			cityIndex.put(city, index++);
 		}
 
-		for (String city : topoOrder) {
-			if (graph.containsKey(city)) {
+		// xreate distance array
+		int[] dp = new int[toateOrasele.size()];
+		Arrays.fill(dp, -1);
+
+		// set the starting point
+		dp[cityIndex.get(startCity)] = 1;
+
+		// get the index of startCity from topoOrder
+		int startCityIndex = topoOrder.indexOf(startCity);
+
+		// DP calculation based on topological order
+		for (int i = startCityIndex; i < topoOrder.size(); i++) {
+			String city = topoOrder.get(i);
+			int u = cityIndex.get(city);
+			if (dp[u] != -1 && graph.containsKey(city)) {
 				for (String neighbor : graph.get(city)) {
-					if (distances.get(neighbor) < distances.get(city) + 1) {
-						distances.put(neighbor, distances.get(city) + 1);
-					}
+					int v = cityIndex.get(neighbor);
+					dp[v] = Math.max(dp[v], dp[u] + 1);
 				}
 			}
 		}
 
-		int maxDistance = distances.get(endCity) + 1;
+		// maxDistance is the maximum distance from startCity to endCity
+		int maxDistance = dp[cityIndex.get(endCity)];
 
 		String outFile = "trenuri.out";
+		PrintWriter out = new PrintWriter(new FileWriter(outFile));
 
 		try {
-			pw.println(maxDistance);
+			out.println(maxDistance);
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
-			pw.close();
+			out.close();
 		}
 
 
 	}
 
-
-	// Topological Sort
-	static void topologicalSort(Map<String, List<String>> graph, Map<String, Integer> inDegree, Set<String> allCities) {
+	// topological sort
+	static void topologicalSort(Map<String, List<String>> graph, Map<String,
+								Integer> gradIntrare, Set<String> toateOrasele) {
 
 		Queue<String> queue = new LinkedList<>();
 
-		for (String city : allCities) {
-			if (inDegree.get(city) == 0) {
-				queue.offer(city);
+		for (String city : toateOrasele) {
+			if (gradIntrare.get(city) == 0) {
+				queue.add(city);
 			}
 		}
 
@@ -90,9 +102,9 @@ public class Trenuri {
 
 			if (graph.containsKey(current)) {
 				for (String neighbor : graph.get(current)) {
-					inDegree.put(neighbor, inDegree.get(neighbor) - 1);
-					if (inDegree.get(neighbor) == 0) {
-						queue.offer(neighbor);
+					gradIntrare.put(neighbor, gradIntrare.get(neighbor) - 1);
+					if (gradIntrare.get(neighbor) == 0) {
+						queue.add(neighbor);
 					}
 				}
 			}
